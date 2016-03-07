@@ -1,18 +1,23 @@
 
-
 p{
     text-align: center;
 }
 
 .header {
-    height:50px;
-    background:#F0F0F0;
+    background:#595959;
     border:1px solid #CCC;
     margin:0px auto;
+
 }
 
-.header-cont {
-    width:100%;
-    position:fixed;
-    top:0px;
+#navbtn{
+    background:#595959;
+}
+
+#nav{
+    text-align: center;
+    color: red;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 150%;
 }
