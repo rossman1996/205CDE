@@ -13,11 +13,33 @@ p{
 #navbtn{
     background:#595959;
 }
-
 #nav{
     text-align: center;
     color: red;
-    margin-top: 10px;
-    margin-bottom: 10px;
     font-size: 150%;
+    margin-top: 10px;
 }
+
+section{
+    text-align: center;
+    margin-top: 0px;
+    background-color: #808080;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 500px;
+    padding-right: 500px;
+    color:black;
+    background-image: url("Capture.PNG");
+}
+
+
+.box{
+    background-color: white;
+    padding: 15px;
+}
+
+h2{
+    font-weight:Bold; 
+    text-align: center;
+}
+/* a:link,hover,visted *\
