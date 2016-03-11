@@ -19,15 +19,15 @@ p{
     font-size: 150%;
     margin-top: 10px;
 }
-
+#head{
+    padding-top: 50px;
+}
 section{
     text-align: center;
     margin-top: 0px;
     background-color: #808080;
     padding-top: 50px;
     padding-bottom: 50px;
-    padding-left: 500px;
-    padding-right: 500px;
     color:black;
     background-image: url("Capture.PNG");
 }
@@ -42,4 +42,18 @@ h2{
     font-weight:Bold; 
     text-align: center;
 }
+
+/*.header{*/
+/*    background: url("image.JPG") no-repeat top center fixed;*/
+/*    background-size: cover;*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*    height: 100%;*/
+/*    width: 100%;*/
+
+/*} */
 /* a:link,hover,visted *\
+
+body{
+    
+}
