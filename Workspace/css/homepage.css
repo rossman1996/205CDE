@@ -10,8 +10,9 @@ p{
 
 }
 
-#navbtn{
-    background:#595959;
+#head{
+    font-weight: bold;
+    
 }
 #nav{
     text-align: center;
@@ -19,8 +20,11 @@ p{
     font-size: 150%;
     margin-top: 10px;
 }
-#head{
-    padding-top: 50px;
+header{
+    padding-top: 5vw;
+    padding-bottom: 5vw;
+    background: url("banner.jpg") no-repeat top center fixed;
+    /*background-size: cover;*/
 }
 section{
     text-align: center;
@@ -37,7 +41,22 @@ section{
     background-color: white;
     padding: 15px;
 }
-
+.icons{
+    background: url(icons.png);
+    width: 300px;
+    height: 400px;
+    cursor: pointer;
+    margin: 10px;
+    outline: none;
+    border: none;
+}
+#contact_Btn{
+    text-align: center;
+    background-position: -106px 0px;
+}
+#contact_btn:hover{
+    background-position: 0px 56px;
+}
 h2{
     font-weight:Bold; 
     text-align: center;
