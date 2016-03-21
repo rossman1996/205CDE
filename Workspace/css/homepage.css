@@ -3,15 +3,11 @@ p{
     text-align: center;
 }
 
-.header {
-    background:#595959;
-    border:1px solid #CCC;
-    margin:0px auto;
 
-}
 
 #head{
     font-weight: bold;
+    color:white;
     
 }
 #nav{
@@ -21,14 +17,18 @@ p{
     margin-top: 10px;
 }
 header{
-    padding-top: 5vw;
-    padding-bottom: 5vw;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
     background: url("banner.jpg") no-repeat top center fixed;
     /*background-size: cover;*/
 }
+.img2{
+    padding-top: 5vw;
+    padding-bottom: 5vw;
+    background: url("topgear.jpg") no-repeat top center fixed;
+}
 section{
     text-align: center;
-    margin-top: 0px;
     background-color: #808080;
     padding-top: 50px;
     padding-bottom: 50px;
@@ -42,20 +42,29 @@ section{
     padding: 15px;
 }
 .icons{
-    background: url(icons.png);
-    width: 300px;
-    height: 400px;
+    width: 64px;
+    height: 64px;
     cursor: pointer;
-    margin: 10px;
     outline: none;
     border: none;
 }
 #contact_Btn{
-    text-align: center;
-    background-position: -106px 0px;
+    background-image: url("circle-1.png");
+    background:none;
+
 }
-#contact_btn:hover{
-    background-position: 0px 56px;
+#facebook_Btn{
+    background-image:none;
+    background-image:url("circle.png");
+}
+#twitter_Btn{
+    background:none;
+    background-image:url("social.png");
+    
+}
+#twitter_Btn:hover{
+    width:-75%;
+    height: -75%;
 }
 h2{
     font-weight:Bold; 
