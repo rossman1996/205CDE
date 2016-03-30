@@ -3,12 +3,12 @@ p{
     text-align: center;
 }
 
-
-
-#head{
+footer{
+    background-color: #615A58;
+    text-align: center;
     font-weight: bold;
+    font-family: Monospace;
     color:white;
-    
 }
 #nav{
     text-align: center;
@@ -18,14 +18,15 @@ p{
 }
 header{
     padding-top: 1vh;
-    padding-bottom: 1vh;
-    background: url("banner.jpg") no-repeat top center fixed;
+    padding-bottom: 100vh;
+    background-size: 100%,50%;
+    background: url(http://blog.hvidtfeldts.net/media/map3x.jpg) no-repeat top center fixed;
     /*background-size: cover;*/
 }
 .img2{
     padding-top: 5vw;
     padding-bottom: 5vw;
-    background: url("topgear.jpg") no-repeat top center fixed;
+    background: url("/Workspace/Resources/images/topgear.jpg") no-repeat top center fixed;
 }
 section{
     text-align: center;
@@ -33,7 +34,8 @@ section{
     padding-top: 50px;
     padding-bottom: 50px;
     color:black;
-    background-image: url("Capture.PNG");
+    background-size: 100%,100%;
+    background-image: url(/Workspace/Resources/images/steet.jpg);
 }
 
 
@@ -47,28 +49,33 @@ section{
     cursor: pointer;
     outline: none;
     border: none;
+    margin-bottom: 5vh;
 }
 #contact_Btn{
-    background-image: url("circle-1.png");
     background:none;
-
+    background-image: url("/Workspace/Resources/images/contact.png");
+    
+}
+#head:hover #contact_btn.icons{
+    background-color: red;
 }
 #facebook_Btn{
-    background-image:none;
-    background-image:url("circle.png");
+    background:none;
+    background-image:url("/Workspace/Resources/images/facebook.png");
 }
 #twitter_Btn{
     background:none;
-    background-image:url("social.png");
+    background-image:url("/Workspace/Resources/images/Twitter.png");
     
-}
-#twitter_Btn:hover{
-    width:-75%;
-    height: -75%;
 }
 h2{
     font-weight:Bold; 
     text-align: center;
+}
+
+body{
+    background-size: 100%;
+    background-color: grey;
 }
 
 /*.header{*/
