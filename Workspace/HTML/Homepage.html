@@ -3,16 +3,15 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        <!--A Viewport element to give hte browser instructions on how to scale the webpage-->
+        <!--A Viewport element to give the browser instructions on how to scale the webpage-->
         <title>I'll Drive</title>
          <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-        <!-- jQuery library -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
         <link href="/Workspace/css/homepage.css" type="text/css" rel="stylesheet" />
-        
+    <!-- Banner -->    
     <body style ="bckground-color: grey">
         <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container-fluid">
@@ -27,20 +26,20 @@
             </div>
         </nav>
         <header>
-            <div id = "head" style="text-align: center; padding-top:15%; padding-bottom:25%;">
-                <img src ="/Workspace/Resources/images/logo.png" style="text-align: center;">
+            <div style="text-align: center; padding-top:15%; padding-bottom:25%;">
+                <img src ="/Workspace/Resources/images/logo.png" alt="I'll drive logo" style="text-align: center ;">
                 <h3 style="text-align: center; padding-bottom:1vh;"> School Of Motoring</h3>
             </div>
             <div style ="text-align: center;">
                 <button id ="contact_Btn" class="icons" style="text-align: center;"></button>
                 <button id ="facebook_Btn" class="icons" style="text-align: center;"></button>
                 <button id ="twitter_Btn" class="icons" style="text-align: center;"></button>
-                <div class="containter" style="text-align: center; font-weight:bold;">
-                    <blockquote>
-                        <p>"The most successful driving school in South-West Wales</p>
-                        <footer>Dai Davies</footer>
-                    </blockquote>
-                </div>
+                <!--<div class="containter" style="text-align: center; font-weight:bold;">-->
+                <!--    <blockquote>-->
+                <!--        <p>"The most successful driving school in South-West Wales</p>-->
+                <!--        <footer>Dai Davies</footer>-->
+                <!--    </blockquote>-->
+                <!--</div> -->
             </div>
         </header>
         <section>
@@ -54,8 +53,31 @@
                 car quite daunting.</p>
             </div>
         </section>
-        <div class= "backgrounds" id= "photos" style ="height: 50vh;">
-            <p> Hey kiddos this is just a test to see if i can actually code yoyo</p>
+        <div class = "Tile">
+            <div class = "flip"  id="Photo">
+               <div class="front"><img src= "/Workspace/Resources/images/HomeTile1.jpg" alt="Student1"> </div>
+               <div class="back"><p>Yeah its pretty good why</p></div>
+            </div>
+            <div class = "flip" id="Photo">
+                <div class="front"><img src= "/Workspace/Resources/images/HomeTile2.jpg" alt="Student2"> </div>
+                <div class="back"><p>Yeah its pretty good why</p></div>
+            </div>
+            <div class = "flip" id="Photo">
+               <div class="front"><img src= "/Workspace/Resources/images/HomeTile3.jpg" alt="Student3"></div>
+               <div class="back"><p>Yeah its pretty good why</p></div>
+            </div>
+            <div class = "flip" id="Photo">
+               <div class="front"><img src= "/Workspace/Resources/images/HomeTile4.jpg" alt="Student4"></div>
+               <div class="back"><p>Yeah its pretty good why</p></div>
+            </div>
+            <div class = "flip" id="Photo" style="height:10%,width:2.5%;">
+               <div class="front"><img src= "/Workspace/Resources/images/HomeTile5.jpg" alt="Student5"></div>
+               <div class="back"><p>Yeah its pretty good why</p></div>
+            </div>
+            <div class = "flip" id="Photo">
+               <div class="front"><img src= "/Workspace/Resources/images/HomeTile6.jpg" alt="Student6"></div>
+               <div class="back"><p>Yeah its pretty good why</p></div>
+            </div>
         </div>
         <section>
             <div class = "box" style= "width: 50vw; margin:0 auto;">
@@ -66,7 +88,6 @@
                 can have your pick of male or female instructors, which should put even the most nervous pupils at ease.</p>
             </div>
         </section>
-        <div class ="backgrounds" style = "height: 50vh;"></div>
         <section>
             <div class = "box" style= "width: 50vw; margin:0 auto;">
                 <p>Whether you are a new driver sitting behind the wheel for the very first time, or have already had 

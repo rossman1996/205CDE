@@ -16,12 +16,11 @@ footer{
     font-size: 3vh;
     margin-top: 10px;
 }
+/*Background of the header, background-size is set to fill the div*/
 header{
-    padding-top: 1vh;
-    padding-bottom: 10%;
-    background-size: 25%;
-    background: url(http://blog.hvidtfeldts.net/media/map3x.jpg) no-repeat top center fixed;
-    /*background-size: cover;*/
+    background: url("/Workspace/Resources/images/map3x.jpg") no-repeat top center fixed;
+    background-size: 100%,100%;
+    
 }
 .img2{
     padding-top: 5vw;
@@ -44,7 +43,7 @@ section{
     padding: 15px;
 }
 /*For the icons at the top of the page restricts size and position*/
-.icons{         
+.icons{
     width: 64px;
     height: 64px;
     cursor: pointer;
@@ -55,9 +54,7 @@ section{
 #contact_Btn{
     background:none;
     background-image: url("/Workspace/Resources/images/contact.png");
-    
 }
-
 #facebook_Btn{
     background:none;
     background-image:url("/Workspace/Resources/images/facebook.png");
@@ -65,21 +62,60 @@ section{
 #twitter_Btn{
     background:none;
     background-image:url("/Workspace/Resources/images/Twitter.png");
-    
-}
-.backgrounds{
-    background: repeat center fixed;
-}
-#photos{
-    background:url(https://media.licdn.com/media/AAEAAQAAAAAAAANbAAAAJDE5NjBkNDk1LTY3ZGQtNDA0NS04YTJiLTdkNmU3NjZiNjI3Mg.png) fixed;
-     /*position: absolute;*/
-}
-h2{
-    font-weight:Bold; 
-    text-align: center;
 }
 
-body{
-    background-size: 100%;
-    background-color: grey;
+/*Image Flips for Qoutes from Previous Students*/
+/*flip{*/
+/*    text-align: center;*/
+/*}*/
+/*.flip > .front{*/
+/*    position:absolute;*/
+/*	left:25%;*/
+/*	transform: perspective( 500px ) rotateY( 0deg );*/
+/*	backface-visibility: hidden;*/
+/*	transition: transform .5s linear 0s;*/
+/*}*/
+/*.flip > .back{*/
+/*	position:absolute;*/
+/*	left:25%;*/
+/*	transform: perspective( 500px ) rotateY( 180deg );*/
+/*	backface-visibility: hidden;*/
+/*	transition: transform .5s linear 0s;*/
+/*}*/
+/*.flip:hover > .front{*/
+/*	transform: perspective( 500px ) rotateY( -180deg );*/
+/*}*/
+/*.flip:hover > .back{*/
+/*	transform: perspective( 500px ) rotateY( 0deg );*/
+/*}*/
+
+/*.flip#photo{*/
+/*    height: 25%;*/
+/*    width: 25%;*/
+/*}*/
+.Tile{
+    height:800px;
+    background:url(https://wallpaperscraft.com/image/cracks_texture_background_light_surface_50654_1920x1200.jpg) no-repeat top center fixed;
+    background-size:100%,100%;
+}
+.flip{ width:500px; height:375px; margin:5px; float:left; }
+.flip > .front{
+	position:absolute;
+	transform: perspective( 600px ) rotateY( 0deg );
+	background:#FC0; width:500px; height:375px; border-radius: 7px;
+	backface-visibility: hidden;
+	transition: transform .5s linear 0s;
+}
+.flip > .back{
+	position:absolute;
+	transform: perspective( 600px ) rotateY( 180deg );
+	background: #80BFFF; width:500px; height:375px; border-radius: 7px;
+	backface-visibility: hidden;
+	transition: transform .5s linear 0s;
+}
+.flip:hover > .front{
+	transform: perspective( 600px ) rotateY( -180deg );
+}
+.flip:hover > .back{
+	transform: perspective( 600px ) rotateY( 0deg );
 }
