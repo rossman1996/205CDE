@@ -1,31 +1,34 @@
 
 p{
     text-align: center;
+    margin:0;
 }
-
+h1{
+    font-family: 'Merriweather', serif;
+    font-weight: bolder;
+    text-align: center;
+}
 footer{
     background-color: #615A58;
-    text-align: center;
     font-weight: bold;
-    font-family: Monospace;
+    font-family: 'Merriweather', serif;
     color:white;
 }
-#nav{
+.nav{
     text-align: center;
-    color: red;
+    color: white;
     font-size: 3vh;
     margin-top: 10px;
+    margin-bottom: 10px;
+}
+a{
+    color:white;
 }
 /*Background of the header, background-size is set to fill the div*/
 header{
     background: url("/Workspace/Resources/images/map3x.jpg") no-repeat top center fixed;
-    background-size: 100%,100%;
+    background-size: cover;
     
-}
-.img2{
-    padding-top: 5vw;
-    padding-bottom: 5vw;
-    background: url("/Workspace/Resources/images/topgear.jpg") no-repeat top center fixed;
 }
 section{
     text-align: center;
@@ -64,52 +67,22 @@ section{
     background-image:url("/Workspace/Resources/images/Twitter.png");
 }
 
-/*Image Flips for Qoutes from Previous Students*/
-/*flip{*/
-/*    text-align: center;*/
-/*}*/
-/*.flip > .front{*/
-/*    position:absolute;*/
-/*	left:25%;*/
-/*	transform: perspective( 500px ) rotateY( 0deg );*/
-/*	backface-visibility: hidden;*/
-/*	transition: transform .5s linear 0s;*/
-/*}*/
-/*.flip > .back{*/
-/*	position:absolute;*/
-/*	left:25%;*/
-/*	transform: perspective( 500px ) rotateY( 180deg );*/
-/*	backface-visibility: hidden;*/
-/*	transition: transform .5s linear 0s;*/
-/*}*/
-/*.flip:hover > .front{*/
-/*	transform: perspective( 500px ) rotateY( -180deg );*/
-/*}*/
-/*.flip:hover > .back{*/
-/*	transform: perspective( 500px ) rotateY( 0deg );*/
-/*}*/
-
-/*.flip#photo{*/
-/*    height: 25%;*/
-/*    width: 25%;*/
-/*}*/
 .Tile{
-    height:800px;
     background:url(https://wallpaperscraft.com/image/cracks_texture_background_light_surface_50654_1920x1200.jpg) no-repeat top center fixed;
-    background-size:100%,100%;
+    background-size:cover;
 }
+/*Flipping Animation*/
 .flip{ width:500px; height:375px; margin:5px; float:left; }
 .flip > .front{
 	position:absolute;
 	transform: perspective( 600px ) rotateY( 0deg );
-	background:#FC0; width:500px; height:375px; border-radius: 7px;
 	backface-visibility: hidden;
 	transition: transform .5s linear 0s;
 }
 .flip > .back{
 	position:absolute;
 	transform: perspective( 600px ) rotateY( 180deg );
-	background: #80BFFF; width:500px; height:375px; border-radius: 7px;
+	background:#f2f2f2;
 	backface-visibility: hidden;
 	transition: transform .5s linear 0s;
 }
@@ -118,4 +91,20 @@ section{
 }
 .flip:hover > .back{
 	transform: perspective( 600px ) rotateY( 0deg );
+}
+/*Ensures qoutes arent bigger/smaller than the pictures*/
+.qoute{
+    width:500px;
+    height: 375px;
+    overflow: auto;
+}
+
+.bottomFooter{
+    background-color: #1a1a1a
+}
+
+#footerLogo{
+    position:absolute;
+    top:2px;
+    left:10px;
 }
