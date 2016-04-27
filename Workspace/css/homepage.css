@@ -30,6 +30,36 @@ header{
     background-size: cover;
     
 }
+@media screen and (max-width:959px){
+    #logo{
+        width:70%;
+        height:70%;
+    }
+    #FontScale{
+        font-size: 90%;
+    }
+    h1{
+        font-size: 100%;
+    }
+    .flip{ 
+        width:50%;
+        height:50%; 
+        float: right;}
+    #photoTile{
+        height:50%;
+        width:50%;
+    }
+    .back{
+        height:50%;
+        width:50%;
+    }
+    #Photo.flip{
+        height:50%;
+        width:50%;
+    }
+    
+
+}
 section{
     text-align: center;
     background-color: #808080;
@@ -38,12 +68,14 @@ section{
     color:black;
     background-size: 100%,100%;
     background-image: url(/Workspace/Resources/images/steet.jpg);
+    background-attachment:scroll;
 }
 
 
 .box{
     background-color: white;
     padding: 15px;
+    border:solid;
 }
 /*For the icons at the top of the page restricts size and position*/
 .icons{
@@ -56,7 +88,7 @@ section{
 }
 #contact_Btn{
     background:none;
-    background-image: url("/Workspace/Resources/images/contact.png");
+    background:url("/Workspace/Resources/images/contact.png");
 }
 #facebook_Btn{
     background:none;
@@ -72,7 +104,12 @@ section{
     background-size:cover;
 }
 /*Flipping Animation*/
-.flip{ width:500px; height:375px; margin:5px; float:left; }
+
+.flip{ width:500px;
+        height:375px; 
+        margin:5px; 
+        float: left;
+}
 .flip > .front{
 	position:absolute;
 	transform: perspective( 600px ) rotateY( 0deg );
@@ -92,12 +129,27 @@ section{
 .flip:hover > .back{
 	transform: perspective( 600px ) rotateY( 0deg );
 }
-/*Ensures qoutes arent bigger/smaller than the pictures*/
-.qoute{
-    width:500px;
-    height: 375px;
-    overflow: auto;
+
+/*Prices table Styles*/
+th, td {
+    border-bottom: 1px solid #ddd;
 }
+th{background-color:#999999; color:white;}
+tr:nth-child(odd) {background-color: #f2f2f2}
+tr:nth-child(even) {background-color: white;}
+#info{
+    color:white;
+}
+/*Form Styles*/
+.form-horizontal{
+    background-color: white;
+    border: 4px solid #999999;
+    padding:5px;
+    margin-bottom: 1vh;
+    border-radius: 2vh;
+    
+}
+/*Footer Styles*/
 
 .bottomFooter{
     background-color: #1a1a1a
