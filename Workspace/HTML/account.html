@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Exam</title>
         <meta charset="utf-8">
-        <!--A Viewport element to give the browser instructions on how to scale the webpage-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <!--A Viewport element to give the browser instructions on how to scale the webpage-->
+        <title>I'll Drive</title>
          <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
         <!-- Latest compiled JavaScript -->
@@ -13,17 +13,98 @@
         <!--Font families-->
         <link href='https://fonts.googleapis.com/css?family=Merriweather:700' rel='stylesheet' type='text/css'>
         <!-- Link to Css File -->
-        <link href="/Workspace/css/homepage.css" type="text/css" rel="stylesheet" />
+
+        <link rel="stylesheet" href="/Workspace/css/footer.css">
+	    <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+        <script src="/Workspace/js/login.js"></script>
+        <link rel="stylesheet" href="/Workspace/css/timetablejs.css">
+        <link rel="stylesheet" href="/Workspace/css/timetable.css">
     </head>
-    <body>
+    <body onload="loadTimetable(">
         <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container-fluid">
                 <div class="navbar-header">
                 </div>
                 <p class="nav" id="FontScale">
-                    <span style="color:white;"><a href="Homepage.html">Home</a> . <a href="#">Instructors</a> . <a href ="#"> Account </a><a href ="#">T&C</a></span>
+                    <span style="color:white;"><a href="Homepage.html">Home</a> . <a href="instructors.html">Instructors</a> . <a href ="account.html"> Account </a><a href ="#">T&C</a></span>
                 </p>
             </div>
         </nav>
+        <div class ="container">
+            <div class="timetable"></div>
+        </div>
+        
+        <script src="/Workspace/js/timetable.min.js"></script>
+        <!--Script for time table-->
+
+        
+        <script>
+          var timetable = new Timetable();
+    
+          timetable.setScope(10,18)
+    
+          timetable.addLocations(['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday']);
+    
+          timetable.addEvent('Sightseeing', 'Tuesday', new Date(2016,4,21,10,45), new Date(2016,4,21,12,30)); //addEvent(name, location, startDate(year,month,day,hour,minute), endDate)
+          timetable.addEvent('Zumba', 'Monday', new Date(2015,7,17,12), new Date(2015,7,17,13), '#');
+    
+          var renderer = new Timetable.Renderer(timetable);
+          renderer.draw('.timetable');
+          function addRoute(){
+            document.getElementById("Check").innerHTML="check"
+            timetable.addEvent('Pussy','Los Angeles',new Date(2015,7,17,12), new Date(2015,7,17,13))
+            renderer.draw('.timetable');
+          };
+        </script>
+        
+       
+            <buclick="addRoute();">press</button>
+        </div>
+    
+                <!--Footer-->
+        <footer class="footer-distributed">
+			<div class="footer-left">
+				<img src="/Workspace/Resources/images/logo.png" alt="I'll Drive logo" style="height:75px; width:175px;">
+
+				<p class="footer-links">
+					<a href="Homepage.html">Home</a> . <a href="instructors.html">Instructors</a> . <a href ="#">T&C</a>
+				</p>
+
+				<p class="footer-company-name">I'll Drive &copy; 2016</p>
+			</div>
+
+			<div class="footer-center">
+				<div>
+				    <i class="glyphicon glyphicon-map-marker"> </i>
+					<p>21 Gors Road, Gors-wyn, Swansea</p>
+				</div>
+
+				<div>
+					<i class="glyphicon glyphicon-phone"></i>
+					<p>01792 446655</p>
+				</div>
+
+				<div>
+					<i class="glyphicon glyphicon-comment"></i>
+					<p><a href="mailto:rossman1996@hotmail.co.uk">I'll_Drive@outlook.co.uk</a></p>
+				</div>
+			</div>
+			<div class="footer-right">
+				<p class="footer-company-about">
+					<span>About the company</span>
+					"Set up since, 2011, I'll Drive School of motoring is the best in the busy, passing over 2000 students in just 5 years"
+				</p>
+			</div>
+		</footer>
+		
+		<!--Google Analytics for timetable-->
+		<script>
+          (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+          function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+          e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+          e.src='//www.google-analytics.com/analytics.js';
+          r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+          ga('create','UA-37417680-5');ga('send','pageview');
+        </script>
     </body>
 </html>

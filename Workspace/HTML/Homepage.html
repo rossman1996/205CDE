@@ -14,6 +14,8 @@
         <link href='https://fonts.googleapis.com/css?family=Merriweather:700' rel='stylesheet' type='text/css'>
         <!-- Link to Css File -->
         <link href="/Workspace/css/homepage.css" type="text/css" rel="stylesheet" />
+        <link rel="stylesheet" href="/Workspace/css/footer.css">
+	    <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
         <script src="/Workspace/js/login.js"></script>
     </head>
         
@@ -24,7 +26,7 @@
             <div class="container-fluid">
                 <div class="container">
                         <div class="nav" id="FontScale" style="text-align:center;">
-                        <a id="change "href="Homepage.html">Home</a> . <a href="instructors.html">Instructors</a> . <a href ="#">T&C</a>
+                        <span style="color:white;"><a href="Homepage.html">Home</a> . <a href="instructors.html">Instructors</a> . <a href ="account.html"> Account </a><a href ="#">T&C</a></span>
                         <button style="float:right" type="button" class="btn btn-secondary-outline" data-toggle="modal" data-target="#loginModal">Login</button>
                     </div>
                 
@@ -65,7 +67,7 @@
             </div>
           </div> 
 
-        
+        <!--Header includes logo and links-->
         <header style = "text-align: center;">
             <div style="padding-top:15%; padding-bottom:25%;">
                 <img id ="logo" src ="/Workspace/Resources/images/logo.png" alt="I'll drive logo" style="text-align: center ;">
@@ -76,7 +78,7 @@
             <button id ="twitter_Btn" class="icons" style="text-align: center;"></button>
         </header>
         
-          
+        <!--Information Sextion-->
         <section>
             <div class = "box" style= "width: 50vw; margin:0 auto;">
                 <h2 > Want To learn To Drive?</h2>
@@ -88,7 +90,7 @@
                 car quite daunting.</p>
             </div>
         </section>
-
+            <!--Photos-->
             <div class = "Tile">
                 <div class="container">
                 <h1 id="sectionTitle" style="text-align:center; margin:0;"> Photos </h1>
@@ -164,6 +166,7 @@
                 can have your pick of male or female instructors, which should put even the most nervous pupils at ease.</p>
             </div>
         </section>
+        <!--Prices-->
         <div class="Tile">
             <div class="container">
                   <h1>Prices</h1>
@@ -300,13 +303,40 @@
                 </form>
             </div>
         </div>
-        <footer class="bottomFooter" class="col-sm-4">
-            <img id="footerlogo" src ="/Workspace/Resources/images/footerLogo.png" alt="I'll drive logo" style="width:50%,height:50%;">
-            <h4>School of Motoring</h4>
-            <p style="position: absolute; right:0px;">
-                <a id="white" href="Homepage.html">Home</a> . <a href="#">Instructors</a> . <a href ="#">Account</a> . <a href ="#">Videos</a> . <a href ="#">T&C</a>
-            </p>
-            <p> © I'll Drive School of Motoring</p>
+        <!--Footer-->
+        <footer class="footer-distributed">
+			<div class="footer-left">
+				<img src="/Workspace/Resources/images/logo.png" alt="I'll Drive logo" style="height:75px; width:175px;">
+
+				<p class="footer-links">
+					<a href="Homepage.html">Home</a> . <a href="instructors.html">Instructors</a> . <a href ="#">T&C</a>
+				</p>
+
+				<p class="footer-company-name">I'll Drive &copy; 2016</p>
+			</div>
+
+			<div class="footer-center">
+				<div>
+				    <i class="glyphicon glyphicon-map-marker"> </i>
+					<p>21 Gors Road, Gors-wyn, Swansea</p>
+				</div>
+
+				<div>
+					<i class="glyphicon glyphicon-phone"></i>
+					<p>01792 446655</p>
+				</div>
+
+				<div>
+					<i class="glyphicon glyphicon-comment"></i>
+					<p><a href="mailto:rossman1996@hotmail.co.uk">I'll_Drive@outlook.co.uk</a></p>
+				</div>
+			</div>
+			<div class="footer-right">
+				<p class="footer-company-about">
+					<span>About the company</span>
+					"Set up since, 2011, I'll Drive School of motoring is the best in the busy, passing over 2000 students in just 5 years"
+				</p>
+			</div>
 		</footer>
     </body>
 </html>
