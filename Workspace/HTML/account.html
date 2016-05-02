@@ -13,14 +13,14 @@
         <!--Font families-->
         <link href='https://fonts.googleapis.com/css?family=Merriweather:700' rel='stylesheet' type='text/css'>
         <!-- Link to Css File -->
-
-        <link rel="stylesheet" href="/Workspace/css/footer.css">
 	    <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
         <script src="/Workspace/js/login.js"></script>
         <link rel="stylesheet" href="/Workspace/css/timetablejs.css">
-        <link rel="stylesheet" href="/Workspace/css/timetable.css">
+        <link rel="stylesheet" href="/Workspace/css/account.css">
+        <link rel="stylesheet" href="/Workspace/css/footer.css">
+        <script src="/Workspace/js/quizzez.js"></script>
     </head>
-    <body onload="loadTimetable(">
+    <body onload="createTable()">
         <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -30,37 +30,68 @@
                 </p>
             </div>
         </nav>
-        <div class ="container">
+        
+        
+            <!--Modal -->
+          <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+            
+               <!--Modal content-->
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 id ="title"class="modal-title" style="text-align:center;">test</h4>
+                </div>
+                
+                <div class="modal-body" class="col-sm-offset-2 col-sm-10">
+                            <h3 id="test_status"></h3>
+                            <iframe id="video" width="0" height="0" src="about:blank" frameborder="0" allowfullscreen></iframe>
+                            <div id="test"> 
+                            </div> 
+                        <div class="modal-footer">
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <button type="submit"class="btn btn-warning" data-dismiss="modal" name="finish"> Finish Test </button>
+                                    
+                                </div>
+                            
+                            </div>
+                        </div>
+                </div>
+              
+                </div>
+                
+            </div>
+         </div>
+      
+        <h1 style="margin:8vh;"> Timetable </h1>
+        <div class ="container" id="timetable">
             <div class="timetable"></div>
         </div>
+       <section>
+        <div class="praticeTests">
+            <div style="text-align:center;">
+                <h2> Pratice for your Test </h2>
+                <p> we have a selection of test, that you can train for your theory and pratical with </p>
+            </div>
+            <div class="container">
+                <label> 'Show me, tell me' questions, are vechile safety questions that a driving examiners can ask you during your pratical driving tests. You'll be asked 2 Vehicle safety questions during your pratical. The question asked will be the same as the ones in this test. Make sure you familarise yourself.</label>
+                <button type="button" class="btn btn-info btn-lg" onclick="showMe();" data-toggle="modal" data-target="#myModal">Show me, Tell Me</button>
+            </div>
+            <div class="container">
+                <label> This test uses the Offical DVSA pratice questions, and is almost indentical to the real thing in both content and function. You must pass your theory tests before you can book your pratical.The test will consist of 50 questions, and you need at minimum 43 correct to pass.</label>
+                <button type="button" class="btn btn-info btn-lg" onclick="theory();" data-toggle="modal" data-target="#myModal">Theory Pratice </button>
+            </div>
+            <div class="container">
+                <label>This part of the theory test requires you to view 14 hazard video clips on the computer screen of approximately one minute each. You are required to watch these clips as if you were the driver. There will be 15 hazards to find - at least one on each clip. However, some clips may have 2 hazards. The hazard clips will not contain any sound</label>
+                <button type="button" class="btn btn-info btn-lg" onclick="hazard();" data-toggle="modal" data-target="#myModal">Hazard Perception</button>
+            </div>
+        </div>
+        
         
         <script src="/Workspace/js/timetable.min.js"></script>
         <!--Script for time table-->
-
         
-        <script>
-          var timetable = new Timetable();
-    
-          timetable.setScope(10,18)
-    
-          timetable.addLocations(['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday']);
-    
-          timetable.addEvent('Sightseeing', 'Tuesday', new Date(2016,4,21,10,45), new Date(2016,4,21,12,30)); //addEvent(name, location, startDate(year,month,day,hour,minute), endDate)
-          timetable.addEvent('Zumba', 'Monday', new Date(2015,7,17,12), new Date(2015,7,17,13), '#');
-    
-          var renderer = new Timetable.Renderer(timetable);
-          renderer.draw('.timetable');
-          function addRoute(){
-            document.getElementById("Check").innerHTML="check"
-            timetable.addEvent('Pussy','Los Angeles',new Date(2015,7,17,12), new Date(2015,7,17,13))
-            renderer.draw('.timetable');
-          };
-        </script>
-        
-       
-            <buclick="addRoute();">press</button>
-        </div>
-    
                 <!--Footer-->
         <footer class="footer-distributed">
 			<div class="footer-left">
