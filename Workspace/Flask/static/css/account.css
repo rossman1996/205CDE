@@ -1,4 +1,4 @@
-body{background:#fcfcfc;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;color:#333;font-size:15px}
+body{font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;color:#333;font-weight: bold; font-size:15px}
 
 a{text-decoration:none}
 
@@ -7,9 +7,6 @@ a{text-decoration:none}
 .timetable .time-label{font-size:.8em;font-weight:500}
 
 
-#radioQ{
-   
-}
 #Q{
     font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; 
     font-weight: bold;
@@ -23,10 +20,6 @@ test_status{
     font-size: medium
 }
 
-body{
-    background-image: url(/Workspace/Resources/images/steet.jpg);
-    background-attachment:scroll;
-}
 #timetable{
     background-color: white;
     border-radius: 2vh;

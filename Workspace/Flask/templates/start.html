@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    {% extends 'bootstrap/base.html' %}
+    {% block head %}
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <!--A Viewport element to give the browser instructions on how to scale the webpage-->
+        <title>I'll Drive</title>
+         <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <!-- Latest compiled JavaScript -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <!--Font families-->
+        <link href='https://fonts.googleapis.com/css?family=Merriweather:700' rel='stylesheet' type='text/css'>
+        <!-- Link to Css File -->
+        <link href="{{ url_for('static',filename='css/homepage.css') }}" type="text/css" rel="stylesheet" />
+        <link rel="stylesheet" href="{{ url_for('static',filename='css/footer.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static',filename='css/header.css') }}">
+	    <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+
+        
+    </head>
+    {% endblock head %}
+    
+    <body>
+    {% block navbar %}
+        {% include "header.html" %}
+    {% endblock %}
+    
+    {% block content %}
+        {% include "Homepage.html" %}
+        {% include "footer.html" %}
+    {% endblock content %}
+          
+    </body>
+</html>
+
+
+

@@ -1,0 +1,19 @@
+.nav{
+    text-align: center;
+    color: white;
+    font-size: 3vh;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+a{
+    color:white;
+}
+
+@media (max-width: 600px) {
+    .nav{
+    font-size: 2vh;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    }
+
+}

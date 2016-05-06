@@ -1,0 +1,186 @@
+    <style>
+        body{
+            background-image: url("{{ url_for('static',filename='Resources/images/steet.jpg') }} ");
+            background-attachment:scroll;
+            background-size: cover;
+        }
+        .form-horizontal{
+        background-color: white;
+        border: 4px solid #999999;
+        padding:5px;
+        margin-bottom: 1vh;
+        border-radius: 2vh;
+        }
+    </style>
+    
+<body onload="createTable()">
+    <script src="{{ url_for('static',filename='js/login.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/timetablejs.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/account.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/footer.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/header.css') }}">
+    <script src="{{ url_for('static',filename='js/quizzez.js') }}"></script>
+        <!--Modal -->
+      <div class="modal fade" id="myModal" role="dialog">
+          <div class="modal-dialog">
+        
+           <!--Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 id ="title"class="modal-title" style="text-align:center;">test</h4>
+            </div>
+            
+            <div class="modal-body" class="col-sm-offset-2 col-sm-10">
+                        <h3 id="test_status"></h3>
+                        <iframe id="video" width="0" height="0" src="about:blank" frameborder="0" allowfullscreen></iframe>
+                        <div id="test"> 
+                        </div> 
+                    <div class="modal-footer">
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit"class="btn btn-warning" data-dismiss="modal" name="finish"> Finish Test </button>
+                                
+                            </div>
+                        
+                        </div>
+                    </div>
+            </div>
+          
+            </div>
+            
+            </div>
+        </div>
+    <script>
+       "use strict";var Timetable=function(){this.scope={hourStart:9,hourEnd:17},this.locations=[],this.events=[]};Timetable.Renderer=function(e){if(!(e instanceof Timetable))throw new Error("Initialize renderer using a Timetable");this.timetable=e},function(){function e(e,n){return t(e)&&t(n)}function t(e){return n(e)&&r(e)}function n(e){return e===parseInt(e,10)}function r(e){return e>=0&&24>e}function o(e,t){return-1!==t.indexOf(e)}function a(e,t){var n=e instanceof Date&&t instanceof Date,r=t>e;return n&&r}function i(e){for(;e.firstChild;)e.removeChild(e.firstChild)}function c(e){var t=10>e?"0":"";return t+e+":00"}Timetable.prototype={setScope:function(t,n){if(!e(t,n))throw new RangeError("Timetable scope should consist of (start, end) in whole hours from 0 to 23");return this.scope.hourStart=t,this.scope.hourEnd=n,this},addLocations:function(e){function t(){return e instanceof Array}var n=this.locations;if(!t())throw new Error("Tried to add locations in wrong format");return e.forEach(function(e){if(o(e,n))throw new Error("Location already exists");n.push(e)}),this},addEvent:function(e,t,n,r,i){if(!o(t,this.locations))throw new Error("Unknown location");if(!a(n,r))throw new Error("Invalid time range: "+JSON.stringify([n,r]));return this.events.push({name:e,location:t,startDate:n,endDate:r,url:i}),this}},Timetable.Renderer.prototype={draw:function(e){function t(e,t){return t>e?t-e:24+t-e}function n(e){if(null===e)throw new Error("Timetable container not found")}function r(e){var t=e.appendChild(document.createElement("aside")),n=t.appendChild(document.createElement("ul"));o(n)}function o(e){for(var t=0;t<p.locations.length;t++){var n=e.appendChild(document.createElement("li")),r=n.appendChild(document.createElement("span"));r.className="row-heading",r.textContent=p.locations[t]}}function a(e){var t=e.appendChild(document.createElement("section")),n=t.appendChild(document.createElement("time"));u(n),l(n)}function u(e){for(var t=e.appendChild(document.createElement("header")),n=t.appendChild(document.createElement("ul")),r=!1,o=!1,a=p.scope.hourStart;!r;){var i=n.appendChild(document.createElement("li")),u=i.appendChild(document.createElement("span"));u.className="time-label",u.textContent=c(a),a!==p.scope.hourEnd||p.scope.hourStart===p.scope.hourEnd&&!o||(r=!0),24===++a&&(a=0,o=!0)}}function l(e){var t=e.appendChild(document.createElement("ul"));t.className="room-timeline";for(var n=0;n<p.locations.length;n++){var r=t.appendChild(document.createElement("li"));s(p.locations[n],r)}}function s(e,t){for(var n=0;n<p.events.length;n++){var r=p.events[n];r.location===e&&d(r,t)}}function d(e,t){var n=e.url,r=n?"a":"span",o=t.appendChild(document.createElement(r)),a=o.appendChild(document.createElement("small"));o.title=e.name,n&&(o.href=e.url),o.className="time-entry",o.style.width=h(e),o.style.left=f(e),a.textContent=e.name}function h(e){var t=e.startDate,n=e.endDate,r=m(t,n);return r/E*100+"%"}function m(e,t){return(t.getTime()-e.getTime())/1e3/60/60}function f(e){var t=e.startDate,n=t.getHours()+t.getMinutes()/60;return(n-p.scope.hourStart)/E*100+"%"}var p=this.timetable,E=t(p.scope.hourStart,p.scope.hourEnd),v=document.querySelector(e);n(v),i(v),r(v),a(v)}}}();
+        var timetable = new Timetable();
+        var renderer = new Timetable.Renderer(timetable);
+        function createTable(){
+          timetable.setScope(10,18)
+    
+          timetable.addLocations(['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday']);
+          
+           {% for entry in entries %} 
+                    timetable.addEvent('booked','{{ entry.Day }}', new Date(2016,4,21,'{{ entry.StartHour }}','{{ entry.startMinute }}'),new Date(2016,4,21,'{{ entry.StartHour+2 }}','{{ entry.EndMinute }}') );
+            {% endfor %}
+          renderer.draw('.timetable');
+        }
+
+    </script>
+    <div class="test"></div>
+    
+    
+    <div class ="container" id="timetable" style="margin-top:8vh;">
+        <h1 style="color:#032a30;"> Timetable </h1>
+        <div class="timetable"></div>
+    </div>
+
+    
+    <div class="container" class="form">
+                <form action="" method="post" class="form-horizontal">
+                    <!--Horizontal form with different groups i.e Personal Details,Address,Contact Information -->
+                    <legend>Book a Time </legend>
+                    <div  class="form-group">
+                        <label  class="col-sm-2"> Day </label>
+                        <div class="col-sm-4">
+                            <select class="form-control" name="day" placeholder="Select a Day">
+                                <option>Select a Day</option>
+                                <option>Monday</option>
+                                <option>Tuesday</option>
+                                <option>Wednesday</option>
+                                <option>Thursday</option>
+                                <option>Friday</option>
+                            </select>
+                        </div>
+                        <label  class="col-sm-2"> Lesson Duration </label>
+                        <div class="col-sm-4">
+                            <select class="form-control" name="duration" placeholder="Select a Duration">
+                                <option>Select a Duration (hours)</option>
+                                <option>1</option>
+                                <option>2</option>
+                            </select>
+                        </div>
+                        <label  class="col-sm-2"> Start hour </label>
+                        <div class="col-sm-4">
+                            <select class="form-control" name="hour" placeholder="Select a Time">
+                                <option>Select a Time</option>
+                                <option>10 </option>
+                                <option>11</option>
+                                <option>12</option>
+                                <option>13 </option>
+                                <option>14</option>
+                                <option>15</option>
+                                <option>16 </option>
+                                <option>17</option>
+                                <option>18</option>
+                            </select>
+                        </div>
+                         <label  class="col-sm-2"> Start minute </label>
+                        <div class="col-sm-4">
+                            <select class="form-control" name="minute" placeholder="Select a Time">
+                                <option>Select a Time</option>
+                                <option>00 </option>
+                                <option>15</option>
+                                <option>30</option>
+                                <option>45</option>
+
+                            </select>
+                        </div>
+                        <label  class="col-sm-2"> Lecturer </label>
+                        <div class="col-sm-4">
+                            <select class="form-control" name="lecturer" placeholder="Select a lecturer">
+                                <option>Select a lecturer</option>
+                                <option>1 </option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+
+                            </select>
+                        </div>
+                    </div>
+    
+                    <!--Submit Form end-->
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <input type="submit" class="btn btn-warning" value = "Submit" name="submit">
+                        </div>
+                    </div>
+                </form>
+    </div>
+  
+    <div class="praticeTests">
+        <div style="text-align:center;">
+            <h2> Pratice for your Test </h2>
+            <p> we have a selection of test, that you can train for your theory and pratical with </p>
+        </div>
+        <div class="container">
+            <label> 'Show me, tell me' questions, are vechile safety questions that a driving examiners can ask you during your pratical driving tests. You'll be asked 2 Vehicle safety questions during your pratical. The question asked will be the same as the ones in this test. Make sure you familarise yourself.</label>
+            <button type="button" class="btn btn-info btn-lg" onclick="showMe();" data-toggle="modal" data-target="#myModal">Show me, Tell Me</button>
+        </div>
+        <div class="container">
+            <label> This test uses the Offical DVSA pratice questions, and is almost indentical to the real thing in both content and function. You must pass your theory tests before you can book your pratical.The test will consist of 50 questions, and you need at minimum 43 correct to pass.</label>
+            <button type="button" class="btn btn-info btn-lg" onclick="theory();" data-toggle="modal" data-target="#myModal">Theory Pratice </button>
+        </div>
+        <div class="container">
+            <label>This part of the theory test requires you to view 14 hazard video clips on the computer screen of approximately one minute each. You are required to watch these clips as if you were the driver. There will be 15 hazards to find - at least one on each clip. However, some clips may have 2 hazards. The hazard clips will not contain any sound</label>
+            <button type="button" class="btn btn-info btn-lg" onclick="hazard();" data-toggle="modal" data-target="#myModal">Hazard Perception</button>
+        </div>
+    </div>
+    
+    
+    
+    <script src="{{ url_for('static', filename='js/timetable.min.js') }} "></script>
+    <!--Script for time table-->
+    
+	<!--Google Analytics for timetable-->
+	<script>
+      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='//www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create','UA-37417680-5');ga('send','pageview');
+    </script>
+</body>

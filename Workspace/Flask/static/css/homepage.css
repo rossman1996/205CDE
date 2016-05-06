@@ -30,36 +30,7 @@ header{
     background-size: cover;
     
 }
-@media screen and (max-width:959px){
-    #logo{
-        width:70%;
-        height:70%;
-    }
-    #FontScale{
-        font-size: 90%;
-    }
-    h1{
-        font-size: 100%;
-    }
-    .flip{ 
-        width:50%;
-        height:50%; 
-        float: right;}
-    #photoTile{
-        height:50%;
-        width:50%;
-    }
-    .back{
-        height:50%;
-        width:50%;
-    }
-    #Photo.flip{
-        height:50%;
-        width:50%;
-    }
-    
 
-}
 section{
     text-align: center;
     background-color: #808080;
@@ -74,7 +45,9 @@ section{
 
 .box{
     background-color: white;
-    padding: 15px;
+    margin-left: 20vw;
+    margin-right: 20vw;
+    padding: 1vw;
     border:solid;
 }
 /*For the icons at the top of the page restricts size and position*/
@@ -160,4 +133,45 @@ tr:nth-child(even) {background-color: white;}
     position:absolute;
     top:2px;
     left:10px;
+}
+
+@media screen and (max-width: 768px){
+    #logo{
+        width:70%;
+        height:70%;
+    }
+    #change{
+        width:95%;
+        height:100%; 
+    }
+    .flip{
+        width:95%;
+        height:235px;
+    }
+    .flip > .front{
+    	position:absolute;
+    	transform: perspective( auto ) rotateY( 0deg );
+    	backface-visibility: hidden;
+    	transition: transform .5s linear 0s;
+    }
+    .flip > .back{
+    	position:absolute;
+    	transform: perspective( auto ) rotateY( 180deg );
+    	background:#f2f2f2;
+    	backface-visibility: hidden;
+    	transition: transform .5s linear 0s;
+    }
+    .flip:hover > .front{
+    	transform: perspective( auto ) rotateY( -180deg );
+    }
+    .flip:hover > .back{
+    	transform: perspective( auto ) rotateY( 0deg );
+    }
+    .box{
+    background-color: white;
+    padding: 15px;
+    margin: 5vw;
+    width: auto;
+    border:solid;
+    }
 }
